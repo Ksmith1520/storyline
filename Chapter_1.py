@@ -1,4 +1,36 @@
 import time
+import webbrowser
+import random
+
+maze_images = [
+    "https://i.imgur.com/cAAWORg.jpeg",
+    "https://i.imgur.com/tFS4qg6.jpeg",
+    "https://i.imgur.com/Q3eLaY4.jpeg",
+    "https://i.imgur.com/zATugwJ.jpeg",
+    "https://i.imgur.com/piocq7O.jpeg"
+]
+
+forest_images = [
+    "https://i.imgur.com/RGIle7k.jpeg",
+    "https://i.imgur.com/BcFwSrI.jpeg",
+    "https://i.imgur.com/sf5sY2s.jpeg",
+    "https://i.imgur.com/spnoaMZ.jpeg",
+    "https://i.imgur.com/3WkWs21.jpeg"
+]
+
+monster_images = [
+    "https://i.imgur.com/wADxYt2.jpeg",
+    "https://i.imgur.com/MJrHyCw.jpeg",
+    "https://i.imgur.com/aANKFcU.jpeg",
+    "https://i.imgur.com/Dk1NDLs.jpeg",
+    "https://i.imgur.com/mvdeDVz.jpeg"
+]
+
+def show_random_image(image_list):
+    image_url = random.choice(image_list)
+    print(f"Opening this image for you to see: {image_url}")
+    webbrowser.open(image_url)
+
 points = 0
 def intro():
     print("Welcome to our interactive story where the choices you make WILL affect the outcome of your story.")
@@ -73,6 +105,7 @@ def start():
 
 def maze():
     global points
+    show_random_image(maze_images)
     print("You enter into the maze but it is super dark. Luckily, you have a flashlight in your bag.")
     print("You shine the flashlight around and follow through the maze, looking for any signs of a hurt child")
     print("You find drops of blood on the ground that you assume to be from the kid. You start to hurry through the maze knowing that every second might count")
@@ -105,11 +138,13 @@ def maze():
 
 def forest():
     global points
+    show_random_image(forest_images)
     print("You find yourself deep in the forest all alone.")
     print("You are surrounded by thick trees and you hear little noise")
     print("Suddenly, you hear the voice of a child calling out for help")
     print("You rush towards the sound, when you see a large shadow running in the distance")
     input("Press Enter to continue...")
+    show_random_image(monster_images)
     print()
 
     print("Make a choice")
@@ -142,6 +177,3 @@ def forest():
 
 if __name__ == "__main__":
     start()
-
-
-
